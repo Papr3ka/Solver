@@ -48,6 +48,25 @@ def equation_edit():
         equation_str = equation_str.replace("7x", "7*x")
         equation_str = equation_str.replace("8x", "8*x")
         equation_str = equation_str.replace("9x", "9*x")
+        equation_str = equation_str.replace("x0", "x*0")
+        equation_str = equation_str.replace("x1", "x*1")
+        equation_str = equation_str.replace("x2", "x*2")
+        equation_str = equation_str.replace("x3", "x*3")
+        equation_str = equation_str.replace("x4", "x*4")
+        equation_str = equation_str.replace("x5", "x*5")
+        equation_str = equation_str.replace("x6", "x*6")
+        equation_str = equation_str.replace("x7", "x*7")
+        equation_str = equation_str.replace("x8", "x*8")
+        equation_str = equation_str.replace("x9", "x*9")
+        equation_str = equation_str.replace("x8", "x*8")
+        equation_str = equation_str.replace("x9", "x*9")
+        equation_str = equation_str.replace("abs", "math.fabs")
+        equation_str = equation_str.replace("floor", "math.floor")
+        equation_str = equation_str.replace("ceil", "math.ceil")
+        equation_str = equation_str.replace("gamma" or "factorial", "math.gamma")
+        equation_str = equation_str.replace("x!" or "(x)!", "math.gamma(x)")
+        equation_str = equation_str.replace("sqrt", "math.sqrt")
+    for x in range(1,len(str(original_eq_str)),1):
         equation_str = equation_str.replace("arcsinh", "trig_f03")
         equation_str = equation_str.replace("arccosh", "trig_f13")
         equation_str = equation_str.replace("arctanh", "trig_f23")
@@ -60,6 +79,7 @@ def equation_edit():
         equation_str = equation_str.replace("sin", "trig_f00")
         equation_str = equation_str.replace("cos", "trig_f10")
         equation_str = equation_str.replace("tan", "trig_f20")
+    for x in range(1,len(str(original_eq_str)),1):
         equation_str = equation_str.replace("trig_f03", "math.asinh")
         equation_str = equation_str.replace("trig_f13", "math.acosh")
         equation_str = equation_str.replace("trig_f23", "math.atanh")
@@ -72,25 +92,20 @@ def equation_edit():
         equation_str = equation_str.replace("trig_f00", "math.sin")
         equation_str = equation_str.replace("trig_f10", "math.cos")
         equation_str = equation_str.replace("trig_f20", "math.tan")
-        if equation_str.count(".asin") and eq_range_max > 1:
-            eq_range_max = 1
-        if equation_str.count(".asin") and eq_range_min < -1:
-            eq_range_min = -1
-        equation_str = equation_str.replace("arccos", "math.acos")
-        if equation_str.count(".acos") and eq_range_max > 1:
-            eq_range_max = 1
-        if equation_str.count(".acos") and eq_range_min < -1:
-            eq_range_min = -1
-        equation_str = equation_str.replace("arctan", "math.atan")
-        if equation_str.count(".atan") and eq_range_max > 1:
-            eq_range_max = 1
-        if equation_str.count(".atan") and eq_range_min < -1:
-            eq_range_min = -1
-        equation_str = equation_str.replace("abs", "math.fabs")
-        equation_str = equation_str.replace("floor", "math.floor")
-        equation_str = equation_str.replace("ceil", "math.ceil")
-        equation_str = equation_str.replace("gamma" or "factorial", "math.gamma")
-        equation_str = equation_str.replace("sqrt", "math.sqrt")
+    if equation_str.count(".asin") and eq_range_max > 1:
+        eq_range_max = 1
+    if equation_str.count(".asin") and eq_range_min < -1:
+        eq_range_min = -1
+    equation_str = equation_str.replace("arccos", "math.acos")
+    if equation_str.count(".acos") and eq_range_max > 1:
+        eq_range_max = 1
+    if equation_str.count(".acos") and eq_range_min < -1:
+        eq_range_min = -1
+    equation_str = equation_str.replace("arctan", "math.atan")
+    if equation_str.count(".atan") and eq_range_max > 1:
+        eq_range_max = 1
+    if equation_str.count(".atan") and eq_range_min < -1:
+        eq_range_min = -1
 def solve():
     clear()
     global tstart
