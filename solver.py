@@ -108,29 +108,44 @@ def solve():
             y_var = dec(eval(equation_str))
             print(x_var,"		|",y_var)
             x_var += eq_res
-        except (ValueError, ZeroDivisionError):
+        except:
             x_var += eq_res
     tend = time.perf_counter()
+def table():
+    global tstart
+    global tend
+    global x_var
+    global y_var
+    global equation_str
+    global original_eq_str
+    global eq_range_max
+    global eq_range_min
+    global eq_res
+    clear()
+    getcontext().prec = 96
+    equation_str = "0"
+    eq_range_min = 0
+    eq_range_max = 0
+    eq_res = 1
+    equation_str = str(input("Y="))
+    eq_range_min = dec(input("Min X:"))
+    eq_range_max = dec(input("Max X:"))
+    eq_res = dec(input("Resolution:"))
+    original_eq_str = equation_str
+    clear()
+    print("Preparing...")
+    equation_edit()
+    solve()
+    print("\n")
+    print(original_eq_str)
+    print("\n")
+    print("Time", tend - tstart)
+    print("\n")
 clear()
-getcontext().prec = 96
-equation_str = "0"
-eq_range_min = 0
-eq_range_max = 0
-eq_res = 1
-equation_str = str(input("Y="))
-eq_range_min = dec(input("Min X:"))
-eq_range_max = dec(input("Max X:"))
-eq_res = dec(input("Resolution:"))
-original_eq_str = equation_str
-clear()
-print("Preparing...")
-equation_edit()
-solve()
-print("\n")
-print(original_eq_str)
-print("\n")
-print("Time", tend - tstart)
-print("\n")
+print("1:Table")
+option = int(input("Select Solver:"))
+if option == 1:
+    table()
 waitsetc = 0
 wait()
 clear()
