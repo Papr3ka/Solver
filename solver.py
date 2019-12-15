@@ -146,6 +146,9 @@ print("1:Table")
 option = int(input("Select Solver:"))
 if option == 1:
     table()
+else:
+    clear()
+    print("Invalid Option")
 waitsetc = 0
 wait()
 clear()
