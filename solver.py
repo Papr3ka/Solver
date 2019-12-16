@@ -27,6 +27,7 @@ def equation_edit():
     global eq_range_min
     for x in range(1,len(str(original_eq_str)),1):
         equation_str = equation_str.replace("^","**")
+        equation_str = equation_str.replace(")(", ")*(")
         equation_str = equation_str.replace("xx", "x*x")
         equation_str = equation_str.replace("0(", "0*(")
         equation_str = equation_str.replace("1(", "1*(")
@@ -63,15 +64,18 @@ def equation_edit():
         equation_str = equation_str.replace("abs", "m_f00q")
         equation_str = equation_str.replace("floor", "m_f01q")
         equation_str = equation_str.replace("ceil", "m_f02q")
-        equation_str = equation_str.replace("gamma" or "factorial", "m_f03q")
-        equation_str = equation_str.replace("x!" or "(x)!", "m_f03q")
-        equation_str = equation_str.replace("sqrt", "m_f04q")
+        equation_str = equation_str.replace("factorial", "m_f03q")
+        equation_str = equation_str.replace("x!" or "(x)!", "m_f03w")
+        equation_str = equation_str.replace("gamma", "m_f04q")
+        equation_str = equation_str.replace("sqrt", "m_f05q")
     for x in range(1,len(str(original_eq_str)),1):
         equation_str = equation_str.replace("m_f00q", "math.fabs")
         equation_str = equation_str.replace("m_f01q", "math.floor")
         equation_str = equation_str.replace("m_f02q", "math.ceil")
         equation_str = equation_str.replace("m_f03q", "math.gamma")
-        equation_str = equation_str.replace("m_f04q", "math.sqrt")
+        equation_str = equation_str.replace("m_f03w", "math.gamma(x)")
+        equation_str = equation_str.replace("m_f04q", "math.gamma")
+        equation_str = equation_str.replace("m_f05q", "math.sqrt")
     for x in range(1,len(str(original_eq_str)),1):
         equation_str = equation_str.replace("arcsinh", "trig_f03")
         equation_str = equation_str.replace("arccosh", "trig_f13")
@@ -130,6 +134,7 @@ def solve():
             print(x_var,"		|",y_var)
             x_var += eq_res
         except:
+            print(x_var,"		|","ERROR")
             x_var += eq_res
     tend = time.perf_counter()
 def table():
