@@ -66,7 +66,7 @@ def equation_edit():
         equation_str = equation_str.replace("gamma" or "factorial", "m_f03")
         equation_str = equation_str.replace("x!" or "(x)!", "m_f03")
         equation_str = equation_str.replace("sqrt", "m_f04")
-     for x in range(1,len(str(original_eq_str)),1):
+    for x in range(1,len(str(original_eq_str)),1):
         equation_str = equation_str.replace("m_f00", "math.fabs")
         equation_str = equation_str.replace("m_f01", "math.floor")
         equation_str = equation_str.replace("m_f02", "math.ceil")
