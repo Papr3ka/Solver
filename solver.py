@@ -64,13 +64,14 @@ def equation_edit():
         equation_str = equation_str.replace("floor", "m_f01")
         equation_str = equation_str.replace("ceil", "m_f02")
         equation_str = equation_str.replace("gamma" or "factorial", "m_f03")
-        equation_str = equation_str.replace("x!" or "(x)!", "math.gamma(x)")
+        equation_str = equation_str.replace("x!" or "(x)!", "m_f03")
         equation_str = equation_str.replace("sqrt", "m_f04")
      for x in range(1,len(str(original_eq_str)),1):
         equation_str = equation_str.replace("m_f00", "math.fabs")
         equation_str = equation_str.replace("m_f01", "math.floor")
         equation_str = equation_str.replace("m_f02", "math.ceil")
-        equation_str = equation_str.replace("m_f03", "math.sqrt")
+        equation_str = equation_str.replace("m_f03", "math.gamma")
+        equation_str = equation_str.replace("m_f04", "math.sqrt")
     for x in range(1,len(str(original_eq_str)),1):
         equation_str = equation_str.replace("arcsinh", "trig_f03")
         equation_str = equation_str.replace("arccosh", "trig_f13")
